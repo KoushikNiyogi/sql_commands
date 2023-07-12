@@ -167,3 +167,74 @@
 - **Prerequisite**: Understand data deletion in SQL / MongoDB
 - **Problem**: Write a query to delete the restaurant with **`id`** 3.
 - DELETE FROM RESTAURANTS WHERE ID = 3;
+
+**Problem 26:**
+
+- **Prerequisite**: Understand creating tables in SQL / collections in MongoDB
+- **Problem**: Create a **`Rides`** table / collection with the fields defined above.
+- CREATE TABLE Rides (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    driver_id INT,
+    passenger_id INT,
+    start_location VARCHAR(255),
+    end_location VARCHAR(255),
+    distance DECIMAL(5,2),
+    ride_time DECIMAL(5,2),
+    fare DECIMAL(6,2)
+);
+
+**Problem 27:**
+
+- **Prerequisite**: Understand inserting data into SQL tables / MongoDB collections
+- **Problem**: Insert five rows / documents into the **`Rides`** table / collection with data of your choice.
+- INSERT INTO Rides (driver_id, passenger_id, start_location, end_location, distance, ride_time, fare)
+VALUES (1, 101, 'Park Street', 'Downtown', 7.2, 30.5, 15.75);
+
+
+**Problem 28:**
+
+- **Prerequisite**: Understand how to order data in SQL / MongoDB
+- **Problem**: Write a query to fetch all rides, ordered by **`fare`** in descending order.
+- >SELECT * FROM RIDES ORDER BY fare DESC;
+
+**Problem 29:**
+
+- **Prerequisite**: Understand using math operations in SQL / MongoDB
+- **Problem**: Write a query to calculate the total **`distance`** and total **`fare`** for all rides.
+- >SELECT SUM(distance) AS total_distance, SUM(fare) AS total_fare FROM RIDES;
+
+**Problem 30:**
+
+- **Prerequisite**: Understand how to use the AVG function in SQL / MongoDB's aggregate functions
+- **Problem**: Write a query to calculate the average **`ride_time`** of all rides.
+- > SELECT AVG(ride_time) FROM RIDES;
+
+**Problem 31:**
+
+- **Prerequisite**: Understand using string patterns in SQL (LIKE clause) / using regex in MongoDB
+- **Problem**: Write a query to fetch all rides whose **`start_location`** or **`end_location`** contains 'Downtown'.
+- >SELECT * FROM RIDES WHERE start_location LIKE "Park%" OR end_location LIKE "Downtown%";
+
+**Problem 32:**
+
+- **Prerequisite**: Understand how to use the COUNT function in SQL / MongoDB's aggregate functions
+- **Problem**: Write a query to count the number of rides for a given **`driver_id`**.
+- >SELECT SUM(driver_id) FROM RIDES WHERE driver_id = 1;
+
+**Problem 33:**
+
+- **Prerequisite**: Understand data updating in SQL / MongoDB
+- **Problem**: Write a query to update the **`fare`** of the ride with **`id`** 4.
+- >UPDATE RIDES SET fare = 30.00 WHERE ID =6;
+
+**Problem 34:**
+
+- **Prerequisite**: Understand using GROUP BY in SQL / MongoDB's aggregate functions
+- **Problem**: Write a query to calculate the total **`fare`** for each **`driver_id`**.
+- ->SELECT DRIVER_ID, SUM(FARE) FROM RIDES GROUP BY DRIVER_ID;
+
+**Problem 35:**
+
+- **Prerequisite**: Understand data deletion in SQL / MongoDB
+- **Problem**: Write a query to delete the ride with **`id`** 2.
+- ->DELETE * FROM RIDES WHERE ID =3;
